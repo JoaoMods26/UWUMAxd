@@ -31,7 +31,7 @@ bgImage.Position = UDim2.new(0, 0, 0, 0)
 bgImage.ImageTransparency = 1
 bgImage.BackgroundTransparency = 1
 bgImage.Image = ""
-bgImage.ZIndex = 0
+bgImage.ZIndex = 1
 bgImage.Parent = frame
 
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 8)
