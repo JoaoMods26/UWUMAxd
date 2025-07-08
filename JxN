@@ -64,6 +64,7 @@ layout.Padding = UDim.new(0, 6)
 
 -- 📝 Caja de texto
 local textBox = Instance.new("TextBox", frame)
+textBox.Text = ""
 textBox.Size = UDim2.new(0.8, -10, 0.2, -5)
 textBox.Position = UDim2.new(0, 5, 0.8, 0)
 textBox.PlaceholderText = "Escribe tu mensaje"
