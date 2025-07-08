@@ -4,7 +4,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 -- 🌐 Firebase URL
-local firebaseURL = "https://chatroblox-1ba85-default-rtdb.europe-west1.firebasedatabase.app/chat.json"
+local firebaseURL = "https://chatsitouwu-xd-xd-default-rtdb.firebaseio.com/Chat.json"
 
 -- 📦 Request para exploits
 local request = (syn and syn.request) or http_request or (fluxus and fluxus.request) or request
