@@ -16,6 +16,14 @@ gui.ResetOnSpawn = false
 gui.IgnoreGuiInset = true
 gui.Parent = game:GetService("CoreGui")
 
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0.3, 0, 0.5, 0)
+frame.Position = UDim2.new(0.05, 0, 0.3, 0)
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame.BorderSizePixel = 0
+frame.Parent = gui
+
 -- 🖼 Fondo opcional
 local bgImage = Instance.new("ImageLabel")
 bgImage.Size = UDim2.new(1, 0, 1, 0)
@@ -24,14 +32,7 @@ bgImage.ImageTransparency = 1
 bgImage.BackgroundTransparency = 1
 bgImage.Image = ""
 bgImage.ZIndex = 0
-bgImage.Parent = gui
-
-local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0.3, 0, 0.5, 0)
-frame.Position = UDim2.new(0.05, 0, 0.3, 0)
-frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-frame.BorderSizePixel = 0
-frame.Parent = gui
+bgImage.Parent = frame
 
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 8)
 
