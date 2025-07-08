@@ -101,7 +101,21 @@ settingsBtn.BorderSizePixel = 0
 -- ⚙️ Panel de ajustes
 local settingsFrame = Instance.new("Frame", gui)
 settingsFrame.Size = UDim2.new(0, 180, 0, 120)
+
+
 settingsFrame.Position = UDim2.new(0.05, 300, 0.3, 0)
+local function actualizarPosicionSettings()
+	settingsFrame.Position = UDim2.new(0, frame.AbsolutePosition.X + frame.AbsoluteSize.X + 10, 0, frame.AbsolutePosition.Y)
+end
+
+frame:GetPropertyChangedSignal("AbsolutePosition"):Connect(actualizarPosicionSettings)
+frame:GetPropertyChangedSignal("AbsoluteSize"):Connect(actualizarPosicionSettings)
+
+task.wait()
+actualizarPosicionSettings()
+
+
+
 settingsFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 settingsFrame.Visible = false
 Instance.new("UICorner", settingsFrame).CornerRadius = UDim.new(0, 8)
