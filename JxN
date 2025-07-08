@@ -239,10 +239,6 @@ sendButton.MouseButton1Click:Connect(function()
 	local texto = textBox.Text
 	if texto ~= "" and #texto < 200 then
 		mensajeCount += 1
-		if primero or mensajeCount % 20 == 0 then
-			request({ Url = firebaseURL, Method = "DELETE" })
-			primero = false
-		end
 		local data = {
 			username = player.Name,
 			text = texto,
