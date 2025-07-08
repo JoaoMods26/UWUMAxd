@@ -212,7 +212,7 @@ local function showMessages(data)
 		textLabel.Parent = container
 		local copyBtn = Instance.new("TextButton")
 		copyBtn.Size = UDim2.new(0, 48, 0, 48)
-		copyBtn.Position = UDim2.new(1, -50, 0, 0)
+		copyBtn.Position = UDim2.new(1, -55, 0, 0)
 		copyBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 		copyBtn.Text = "📋"
 		copyBtn.TextColor3 = Color3.new(1, 1, 1)
