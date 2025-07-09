@@ -291,7 +291,7 @@ task.spawn(function()
 						_G.Rayfield:Notify({
 							Title = "Nuevo mensaje",
 							Content = (ultimo.username or "???") .. ": " .. (ultimo.text or ""),
-							Duration = 5
+							Duration = 2
 						})
 					end
 					ultimoMensajeID = ultimo._id
