@@ -64,9 +64,9 @@ end
 	title.Size = UDim2.new(1, 0, 0, 30)
 	title.Position = UDim2.new(0, 0, 0, -30)
 	title.BackgroundTransparency = 1
-	title.Text = "<font color=\"rgb(255,0,0)\">J</font><font color=\"rgb(0,255,0)\">X</font><font color=\"rgb(0,200,255)\">N</font><font color=\"rgb(255,255,0)\">u</font><font color=\"rgb(255,0,255)\">l</font><font color=\"rgb(200,200,200)\">l</font>"
+	title.Text = "JXNULL"
 	title.RichText = true
-	title.TextColor3 = Color3.new(1, 1, 1)
+	title.TextColor3 = Color3.new(1,0,0)
 	title.TextScaled = true
 	title.Font = Enum.Font.SourceSansBold
 
