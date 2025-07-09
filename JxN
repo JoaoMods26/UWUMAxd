@@ -2,10 +2,6 @@ if makefolder and not isfolder("JXNULL_CONFIGS") then
 makefolder("JXNULL_CONFIGS")
 end
 
-local HTTPSERVICE = game:GetService("HttpService")
-
-
-
 
 -- 🔧 Servicios necesarios
  HttpService = game:GetService("HttpService")
@@ -49,7 +45,7 @@ function crearChatGUI()
 	if isfile("JXNULL_CONFIGS/Config.json") then
 	local contenido = readfile("JXNULL_CONFIGS/Config.json")
 if contenido then
-	local Datos = HTTPSERVICE:JSONDecode(contenido)
+	local Datos = HttpService:JSONDecode(contenido)
 	
 	bgImage.Image = Datos.ImageId or ""
 	bgImage.ImageTransparency = 0.1
@@ -181,7 +177,7 @@ end
 		  Transparency = t,
 		  ImageId = "rbxassetid://".. id
 		}
-		local json = HTTPSERVICE:JSONEncode(Datos)
+		local json = HttpService:JSONEncode(Datos)
 		writefile("JXNULL_CONFIGS/Config.json",json)
 	end)
 
