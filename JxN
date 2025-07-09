@@ -1,3 +1,9 @@
+if makefolder and not isfolder("JXNULL_CONFIGS") then
+makefolder("JXNULL_CONFIGS")
+end
+
+
+
 -- 🔧 Servicios necesarios
  HttpService = game:GetService("HttpService")
 Players = game:GetService("Players")
@@ -36,6 +42,14 @@ function crearChatGUI()
 	bgImage.Image = ""
 	bgImage.ZIndex = 1
 	bgImage.Parent = frame
+	
+	if isfile("JXNULL_CONFIGS/Config.json") then
+	local contenido = readfile("JXNULL_CONFIGS/Config.json")
+	local Datos = HTTPSERVICE:JSONDecode(contenido)
+	
+	bgImage.Image = Datos.ImageId or ""
+	frame.Transparency = Datos.Transparency or 0
+	end
 
 	local title = Instance.new("TextLabel", frame)
 	title.Size = UDim2.new(1, 0, 0, 30)
@@ -149,12 +163,21 @@ function crearChatGUI()
 	applyBtn.TextColor3 = Color3.new(1, 1, 1)
 	applyBtn.Font = Enum.Font.SourceSans
 	applyBtn.TextSize = 14
+	
+	local HTTPSERVICE = game:GetService("HttpService")
 
 	applyBtn.MouseButton1Click:Connect(function()
 		local t = tonumber(transparencyInput.Text)
 		if t then frame.BackgroundTransparency = math.clamp(t, 0, 1) end
 		local id = imageInput.Text:match("%d+")
 		if id then bgImage.Image = "rbxassetid://" .. id bgImage.ImageTransparency = 0.1 end
+		
+		local Datos = {
+		  Transparency = t,
+		  ImageId = "rbxassetid://".. id
+		}
+		local json = HTTPSERVICE:JSONEncode(Datos)
+		writefile("JXNULL_CONFIGS/Config.json",json)
 	end)
 
 	settingsBtn.MouseButton1Click:Connect(function()
