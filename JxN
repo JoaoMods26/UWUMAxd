@@ -51,17 +51,9 @@ wait(3)
   end
 end
 
-local ClearChatFunction()
-request({
-				    Url = "https://chatsitouwu-xd-xd-default-rtdb.firebaseio.com/Chat.json",
-				    Method = "DELETE"
-				  })
-end
-
 
 local ComandosF = {
-  ["MeteorShower"] = MeteorShowerFunction,
-  ["ClearChat"] = ClearChatFunction
+  ["MeteorShower"] = MeteorShowerFunction
 }
 
 
@@ -460,5 +452,4 @@ guiActivo = false
 		end
 	end,
 })
-
 
