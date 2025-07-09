@@ -221,6 +221,7 @@ local function showMessages(data)
 		if ChatScripters[username] then
 		  tag = " [👑Owner🤑]"
 		end
+		if not text:lower():find("discord") then
 		local fullText = username .. tag .. ": " .. text
 		local userId = 1
 		local success, result = pcall(function()
@@ -261,6 +262,7 @@ local function showMessages(data)
 		copyBtn.MouseButton1Click:Connect(function()
 			if setclipboard then setclipboard(fullText) end
 		end)
+		end
 	end
 	task.wait()
 	chatBox.CanvasPosition = Vector2.new(0, chatBox.AbsoluteCanvasSize.Y)
