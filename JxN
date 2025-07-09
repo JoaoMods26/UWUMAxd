@@ -25,19 +25,21 @@ local function MeteorShowerFunction()
     if hrp then
       hrpCFrame = hrp.CFrame
       task.spawn(function()
-      for i = 1, 50, 1 do
+      for i = 1, 100, 1 do
         local meteorito = Instance.new("Part", game.Workspace)
+        meteorito.Color = Color3.fromRGB(0,0,0)
         meteorito.Shape = Enum.PartType.Ball
         meteorito.Anchored = false
         meteorito.CanCollide = true
         meteorito.Size = Vector3.new(math.random(2,50),math.random(2,50),math.random(2,100))
-        meteorito.CFrame = hrpCFrame * CFrame.new(math.random(-100,100),5000,math.random(-100,100))
+        meteorito.CFrame = hrpCFrame * CFrame.new(math.random(-1000,1000),5000,math.random(-1000,1000))
         meteorito.AssemblyAngularVelocity = Vector3.new(0,-1000,0)
         table.insert(meteoritos,meteorito)
         local fire = Instance.new("Fire",meteorito)
         fire.Size = meteorito.Size.Magnitude * 0.5
         wait(0.1)
       end
+wait(3)
       for _, UwU in pairs(meteoritos) do
         if UwU:IsA("BasePart") then
           UwU:Destroy()
