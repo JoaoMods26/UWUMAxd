@@ -281,6 +281,7 @@ local function showMessages(data)
 		      if ComandosF[cmds] then
 		        funcion()
 		        if msg._id then
+wait(3)
 		        request({
 				    Url = "https://chatsitouwu-xd-xd-default-rtdb.firebaseio.com/Chat/".. msg._id.. ".json",
 				    Method = "DELETE"
