@@ -4,7 +4,6 @@ end
 
 
 -- 🔧 Servicios necesarios
-local rayfiel = getgenv().rayfiel
  HttpService = game:GetService("HttpService")
 Players = game:GetService("Players")
 player = Players.LocalPlayer
