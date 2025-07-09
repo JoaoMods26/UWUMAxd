@@ -366,7 +366,7 @@ task.spawn(function()
 					return (a.time or 0) < (b.time or 0)
 				end)
 				
-				if #mensajes >= 20 then
+				if #mensajes >= 30 then
 				  for i = 1, #mensajes - 1 do
 				    local mensag = mensajes[i]
 				    if mensag._id then
