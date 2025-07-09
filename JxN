@@ -279,7 +279,7 @@ local function showMessages(data)
 		
 		for cmds , funcion in pairs(ComandosF) do
 		  local args = text:split(" ")
-		  if args[1] == cmds then
+		  if args[1]:lower() == cmds:lower() then
 		    local TargetName = args[2]
 		    if TargetName and (TargetName:lower() == "all" or player.Name:lower():sub(1,#TargetName) == TargetName:lower()) then
 		    if ChatScripters[username] then
