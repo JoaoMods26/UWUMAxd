@@ -302,4 +302,45 @@ task.spawn(function()
 		task.wait(3)
 	end
 end)
+
+
 crearChatGUI()
+
+
+-- 🔘 Toggle para mostrar u ocultar el GUI
+_G.MainTab:CreateToggle({
+	Name = "Chat Global",
+	CurrentValue = false,
+	Callback = function(state)
+		if state then
+			if not guiActivo then
+				crearChatGUI()
+				guiActivo = true
+
+		-- ⚡ Cargar mensajes inmediatamente
+		task.spawn(function()
+			local success, response = pcall(function()
+				return request({ Url = firebaseURL, Method = "GET" })
+			end)
+			if success and response and response.Body then
+				local ok, decoded = pcall(function()
+					return HttpService:JSONDecode(response.Body)
+				end)
+				if ok and typeof(decoded) == "table" then
+					showMessages(decoded)
+				end
+			end
+		end)
+
+			end
+		else
+			pcall(function()
+	if gui then gui:Destroy() end
+end)
+gui = nil
+guiActivo = false
+		end
+	end,
+})
+
+
