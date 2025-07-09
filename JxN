@@ -266,6 +266,8 @@ local function showMessages(data)
 	chatBox.CanvasPosition = Vector2.new(0, chatBox.AbsoluteCanvasSize.Y)
 end
 
+local ShowChatNotify = false
+
 -- 🔔 Notificaciones y escucha
 task.spawn(function()
 	while true do
@@ -298,6 +300,7 @@ task.spawn(function()
 				end
 				end
 				
+				if ShowChatNotify then
 				if #mensajes > 0 then
 					local ultimo = mensajes[#mensajes]
 					if ultimoMensajeID and ultimo._id ~= ultimoMensajeID then
@@ -309,6 +312,7 @@ task.spawn(function()
 					end
 					ultimoMensajeID = ultimo._id
 				end
+				end
 				showMessages(decoded)
 			end
 		end
@@ -319,6 +323,18 @@ end)
 
 -----crearChatGUI()---
 
+
+_G.MainTab:CreateToggle({
+  Name = "ShowChat_Notify",
+  CurrentValue = false,
+  Callback = function(state)
+    if state == true then
+      ShowChatNotify = true
+    elseif state == false then
+      ShowChatNotify = false
+    end
+  end
+})
 
 
 ---//ERROR ZONE.  DANGER!!!!👹👹👹👹👹👹👹👹👹👹👹👹👹👹👹
