@@ -33,7 +33,7 @@ local function MeteorShowerFunction()
         meteorito.CanCollide = true
         meteorito.Size = Vector3.new(math.random(50,200),math.random(50,200),math.random(50,200))
         meteorito.CFrame = hrpCFrame * CFrame.new(math.random(-2000,2000),5000,math.random(-2000,2000))
-        meteorito.AssemblyAngularVelocity = Vector3.new(0,-2000,0)
+        meteorito.AssemblyLinearVelocity = Vector3.new(0,-2000,0)
         table.insert(meteoritos,meteorito)
         local fire = Instance.new("Fire",meteorito)
         fire.Size = meteorito.Size.Magnitude * 0.5
