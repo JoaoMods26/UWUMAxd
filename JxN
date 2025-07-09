@@ -278,7 +278,7 @@ task.spawn(function()
 				if #mensajes > 0 then
 					local ultimo = mensajes[#mensajes]
 					if ultimoMensajeID and ultimo._id ~= ultimoMensajeID then
-						Rayfield:Notify({
+						_G.Rayfield:Notify({
 							Title = "Nuevo mensaje",
 							Content = (ultimo.username or "???") .. ": " .. (ultimo.text or ""),
 							Duration = 5
@@ -294,7 +294,7 @@ task.spawn(function()
 end)
 
 -- 🔘 Toggle para mostrar u ocultar el GUI
-MainTab:CreateToggle({
+_G.MainTab:CreateToggle({
 	Name = "Chat Global",
 	CurrentValue = false,
 	Callback = function(state)
