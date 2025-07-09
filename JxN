@@ -9,52 +9,11 @@ local ChatScripters = {
 
 }
 
+
 -- 🔧 Servicios necesarios
  HttpService = game:GetService("HttpService")
 Players = game:GetService("Players")
 player = Players.LocalPlayer
-
-local meteoritos = {}
-local hrpCFrame = nil
-
-
-local function MeteorShowerFunction()
-  local char = player.Character
-  if char then
-    local hrp = char:FindFirstChild("HumanoidRootPart")
-    if hrp then
-      hrpCFrame = hrp.CFrame
-      task.spawn(function()
-      for i = 1, 100, 1 do
-        local meteorito = Instance.new("Part", game.Workspace)
-        meteorito.Shape = Enum.PartType.Ball
-        meteorito.Anchored = false
-        meteorito.CanCollide = true
-        meteorito.Size = Vector3.new(math.random(2,50),math.random(2,50),math.random(2,100))
-        meteorito.CFrame = hrpCFrame * CFrame.new(math.random(-100,100),math.random(-100,100),math.random(-100,100))
-        meteorito.AssemblyAngularVelocity = Vector3.new(0,-1000,0)
-        table.insert(meteoritos,meteorito)
-        local fire = Instance.new("Fire",meteorito)
-        fire.Size = meteorito.Size + meteorito.Size
-        wait(0.1)
-      end
-      for _, UwU in pairs(meteoritos) do
-        if UwU:IsA("BasePart") then
-          UwU:Destroy()
-        end
-      end
-      meteoritos = {}
-      end)
-    end
-  end
-end
-
-
-local ComandosF = {
-  ["MeteorShower"] = MeteorShowerFunction
-}
-
-
 firebaseURL = "https://chatsitouwu-xd-xd-default-rtdb.firebaseio.com/Chat.json"
 request = (syn and syn.request) or http_request or (fluxus and fluxus.request) or request
 
@@ -62,10 +21,6 @@ request = (syn and syn.request) or http_request or (fluxus and fluxus.request) o
  gui, chatBox, frame, sendButton, textBox, settingsFrame, bgImage = nil
  ultimoMensajeID = nil
  guiActivo = false
- 
- 
- 
- 
 
 -- Crear GUI
 function crearChatGUI()
@@ -274,17 +229,6 @@ local function showMessages(data)
 		if ChatScripters[username] then
 		  tag = " [👑Owner🤑]"
 		end
-		
-		for cmds , funcion in pairs(ComandosF) do
-		  if text == cmds then
-		    if ChatScripters[username] then
-		      if ComandosF[cmds] then
-		        funcion()
-		      end
-		    end
-		  end
-		end
-		
 		if not text:lower():find("discord") then
 		local fullText = username .. tag .. ": " .. text
 		local userId = 1
