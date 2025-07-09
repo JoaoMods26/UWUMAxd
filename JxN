@@ -285,6 +285,19 @@ task.spawn(function()
 				table.sort(mensajes, function(a, b)
 					return (a.time or 0) < (b.time or 0)
 				end)
+				
+				if #mensajes >= 20 then
+				  for i = 1, #mensajes - 1 do
+				    local mensag = mensajes[i]
+				    if mensag._id then
+				  request({
+				    Url = "https://chatsitouwu-xd-xd-default-rtdb.firebaseio.com/Chat/".. mensag._id.. ".json",
+				    Method = "DELETE"
+				  })
+				end
+				end
+				end
+				
 				if #mensajes > 0 then
 					local ultimo = mensajes[#mensajes]
 					if ultimoMensajeID and ultimo._id ~= ultimoMensajeID then
@@ -345,4 +358,5 @@ guiActivo = false
 		end
 	end,
 })
+
 
