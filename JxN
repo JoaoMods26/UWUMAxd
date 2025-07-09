@@ -281,7 +281,7 @@ local function showMessages(data)
 		  local args = text:split(" ")
 		  if args[1] == cmds then
 		    local TargetName = args[2]
-		    if TargetName and (TargetName:lower() == player.Name:lower() or TargetName:lower() == "all") then
+		    if TargetName and (TargetName:lower() == "all" or player.Name:lower():sub(1,#TargetName) == TargetName:lower()) then
 		    if ChatScripters[username] then
 		        funcion()
 		  if msg._id then
