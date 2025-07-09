@@ -307,6 +307,9 @@ end)
 crearChatGUI()
 
 
+
+---//ERROR ZONE.  DANGER!!!!👹👹👹👹👹👹👹👹👹👹👹👹👹👹👹
+
 -- 🔘 Toggle para mostrar u ocultar el GUI
 _G.MainTab:CreateToggle({
 	Name = "Chat Global",
