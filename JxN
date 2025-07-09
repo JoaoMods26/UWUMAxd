@@ -288,13 +288,12 @@ task.spawn(function()
 				if #mensajes > 0 then
 					local ultimo = mensajes[#mensajes]
 					if ultimoMensajeID and ultimo._id ~= ultimoMensajeID then
-if _G.NotificacionesActivadas then
-	_G.Rayfield:Notify({
-		Title = "Nuevo mensaje",
-		Content = (ultimo.username or "???") .. ": " .. (ultimo.text or ""),
-		Duration = 2
-	})
-end
+						_G.Rayfield:Notify({
+							Title = "Nuevo mensaje",
+							Content = (ultimo.username or "???") .. ": " .. (ultimo.text or ""),
+							Duration = 2
+						})
+					end
 					ultimoMensajeID = ultimo._id
 				end
 				showMessages(decoded)
@@ -344,16 +343,6 @@ end)
 gui = nil
 guiActivo = false
 		end
-	end,
-})
-
-
-
-_G.MainTab:CreateToggle({
-	Name = "Ver Notificaciones Chat",
-	CurrentValue = true,
-	Callback = function(state)
-		_G.NotificacionesActivadas = state
 	end,
 })
 
