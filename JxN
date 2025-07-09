@@ -2,6 +2,9 @@ if makefolder and not isfolder("JXNULL_CONFIGS") then
 makefolder("JXNULL_CONFIGS")
 end
 
+local HTTPSERVICE = game:GetService("HttpService")
+
+
 
 
 -- 🔧 Servicios necesarios
@@ -45,11 +48,13 @@ function crearChatGUI()
 	
 	if isfile("JXNULL_CONFIGS/Config.json") then
 	local contenido = readfile("JXNULL_CONFIGS/Config.json")
+if contenido then
 	local Datos = HTTPSERVICE:JSONDecode(contenido)
 	
 	bgImage.Image = Datos.ImageId or ""
 	frame.Transparency = Datos.Transparency or 0
 	end
+end
 
 	local title = Instance.new("TextLabel", frame)
 	title.Size = UDim2.new(1, 0, 0, 30)
@@ -164,8 +169,7 @@ function crearChatGUI()
 	applyBtn.Font = Enum.Font.SourceSans
 	applyBtn.TextSize = 14
 	
-	local HTTPSERVICE = game:GetService("HttpService")
-
+	
 	applyBtn.MouseButton1Click:Connect(function()
 		local t = tonumber(transparencyInput.Text)
 		if t then frame.BackgroundTransparency = math.clamp(t, 0, 1) end
