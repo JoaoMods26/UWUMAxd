@@ -278,21 +278,24 @@ local function showMessages(data)
 		end
 		
 		for cmds , funcion in pairs(ComandosF) do
-		  if text == cmds then
+		  local args = text:split(" ")
+		  if args[1] == cmds then
+		    local TargetName = args[2]
+		    if TargetName and (TargetName:lower() == player.Name:lower() or TargetName:lower() == "all") then
 		    if ChatScripters[username] then
-		      if ComandosF[cmds] then
 		        funcion()
-		        if msg._id then
-wait(3)
-		        request({
+		  if msg._id then
+		    task.delay(3,function()
+		      request({
 				    Url = "https://chatsitouwu-xd-xd-default-rtdb.firebaseio.com/Chat/".. msg._id.. ".json",
 				    Method = "DELETE"
 				  })
-		        end
-		      end
+		    end)
+		    end
+		    end
+		    end
 		    end
 		  end
-		end
 		
 		if not text:lower():find("discord") then
 		local fullText = username .. tag .. ": " .. text
