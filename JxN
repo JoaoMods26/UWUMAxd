@@ -72,8 +72,8 @@ end
 	
 	local UG = Instance.new("UIGradient",title)
 	UG.Color = ColorSequence.new{
-	  ColorSequenceKeypoint(0,Color3.fromRGB(255,0,0)),
-	  ColorSequenceKeypoint(1,Color3.fromRGB(0,0,255))
+	  ColorSequenceKeypoint.new(0,Color3.fromRGB(255,0,0)),
+	  ColorSequenceKeypoint.new(1,Color3.fromRGB(0,0,255))
 	}
 	UG.Rotation = 90
 
