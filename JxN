@@ -35,7 +35,7 @@ local function MeteorShowerFunction()
         meteorito.AssemblyAngularVelocity = Vector3.new(0,-1000,0)
         table.insert(meteoritos,meteorito)
         local fire = Instance.new("Fire",meteorito)
-        fire.Size = meteorito.Size + meteorito.Size
+        fire.Size = meteorito.Size.Magnitude * 0.5
         wait(0.1)
       end
       for _, UwU in pairs(meteoritos) do
