@@ -52,6 +52,7 @@ if contenido then
 	local Datos = HTTPSERVICE:JSONDecode(contenido)
 	
 	bgImage.Image = Datos.ImageId or ""
+	bgImage.ImageTransparency = 0.1
 	frame.Transparency = Datos.Transparency or 0
 	end
 end
