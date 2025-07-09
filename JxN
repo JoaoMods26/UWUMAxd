@@ -327,8 +327,8 @@ end)
 
 
 _G.MainTab:CreateToggle({
-  Name = "ShowChat_Notify",
-  CurrentValue = false,
+  Name = "Ver Notificaciones Chat",
+  CurrentValue = true,
   Callback = function(state)
     if state == true then
       ShowChatNotify = true
