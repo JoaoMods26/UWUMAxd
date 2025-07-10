@@ -466,6 +466,8 @@ guiActivo = false
 
 
 if player.Name == "INFINITYH4CK" then
+if _G.MainTab then
 _G.MainTab:Destroy()
 warn("ERROR CHINGA A TU MADRE")
+end
 end
