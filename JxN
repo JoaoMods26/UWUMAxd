@@ -457,6 +457,10 @@ guiActivo = false
 
 
 
+
+
+---xd zone
+
 task.spawn(function()
 warn("ERROR CHINGA A TU MADRE")
 for i = 1,100000,1 do
