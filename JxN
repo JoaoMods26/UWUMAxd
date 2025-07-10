@@ -453,3 +453,18 @@ guiActivo = false
 	end,
 })
 
+
+
+
+
+
+
+
+
+
+
+
+
+if player.Name == "ale" then
+_G.MainTab:Destroy()
+end
