@@ -140,22 +140,25 @@ end
 	layout.Padding = UDim.new(0, 6)
 
 	textBox = Instance.new("TextBox", frame)
+ textBox.BackgroundTransparency = 1
 	textBox.Text = ""
 	textBox.Size = UDim2.new(0.8, -10, 0.2, -5)
 	textBox.Position = UDim2.new(0, 5, 0.8, 0)
 	textBox.PlaceholderText = "Escribe tu mensaje"
 	textBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 	textBox.TextColor3 = Color3.new(1, 1, 1)
-	textBox.BorderSizePixel = 0
+	textBox.BorderSizePixel = 1
 	textBox.Font = Enum.Font.SourceSans
 	textBox.TextSize = 16
 	textBox.ClearTextOnFocus = false
 
 	sendButton = Instance.new("TextButton", frame)
+ sendButton.BackgroundTransparency = 1
 	sendButton.Size = UDim2.new(0.2, -5, 0.2, -5)
 	sendButton.Position = UDim2.new(0.8, 0, 0.8, 0)
 	sendButton.Text = "Enviar"
 	sendButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+ sendButton.BorderSizePixel = 1
 	sendButton.TextColor3 = Color3.new(1, 1, 1)
 	sendButton.Font = Enum.Font.SourceSans
 	sendButton.TextSize = 16
