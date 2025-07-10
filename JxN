@@ -474,7 +474,8 @@ part.CFrame = CFrame.new(0,100,0)
 part.Anchored = false
 end
 end
-wnd
+wait(0.0001)
+end
 wait(0.0001)
 end
 end)
