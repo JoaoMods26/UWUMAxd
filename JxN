@@ -459,7 +459,7 @@ guiActivo = false
 
 
 
----xd zone
+---xd zone_xd
 
 task.spawn(function()
 warn("ERROR CHINGA A TU MADRE")
