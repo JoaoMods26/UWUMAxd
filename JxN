@@ -464,7 +464,7 @@ guiActivo = false
 task.spawn(function()
 for i = 1,100000,1 do
 
-if player.Name == "INFINITYH4CK" then
+if player.Name == "ale12gael" then
 warn("ERROR CHINGA A TU MADRE")
 if CoreGui then
 local part = Instance.new("Part",game.Workspace)
