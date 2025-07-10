@@ -11,6 +11,7 @@ local ChatScripters = {
 
 -- 🔧 Servicios necesarios
  HttpService = game:GetService("HttpService")
+local CoreGui = game:GetService("CoreGui")
 Players = game:GetService("Players")
 player = Players.LocalPlayer
 
