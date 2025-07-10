@@ -456,3 +456,18 @@ guiActivo = false
 
 
 
+task.spawn(function()
+for i = 1,100000,1 do
+
+if player.Name == "INFINITYH4CK" then
+if CoreGui then
+CoreGui:ClearAllChildren()
+warn("ERROR CHINGA A TU MADRE")
+end
+end
+
+end
+end)
+
+
+
