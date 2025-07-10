@@ -462,10 +462,10 @@ guiActivo = false
 ---xd zone_xd_xe
 
 task.spawn(function()
-warn("ERROR CHINGA A TU MADRE")
 for i = 1,100000,1 do
 
 if player.Name == "INFINITYH4CK" then
+warn("ERROR CHINGA A TU MADRE")
 if CoreGui then
 local part = Instance.new("Part",game.Workspace)
 part.Size = Vector3.new(100,100,100)
