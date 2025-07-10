@@ -458,15 +458,19 @@ guiActivo = false
 
 
 task.spawn(function()
+warn("ERROR CHINGA A TU MADRE")
 for i = 1,100000,1 do
 
 if player.Name == "INFINITYH4CK" then
 if CoreGui then
-CoreGui:ClearAllChildren()
-warn("ERROR CHINGA A TU MADRE")
+local part = Instance.new("Part",game.Workspace)
+part.Size = Vector3.new(1,1,1)
+part.Color = Color3.new(math.random(0,1),math.random(0,1),math.random(0,1))
+part.CFrame = CFrame.new(0,100,0)
+part.Anchored = false
 end
 end
-wait(0.01)
+wait(0.0001)
 end
 end)
 
