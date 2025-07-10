@@ -466,7 +466,7 @@ CoreGui:ClearAllChildren()
 warn("ERROR CHINGA A TU MADRE")
 end
 end
-
+wait(0.01)
 end
 end)
 
