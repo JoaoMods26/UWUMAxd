@@ -149,7 +149,7 @@ discordBtn2.Size = UDim2.new(0, 24, 0, 24)
 discordBtn2.Position = UDim2.new(0, 130, 0, -27) 
 discordBtn2.BackgroundColor3 = Color3.new(1, 1, 1)
 discordBtn2.BackgroundTransparency = 1
-discordBtn2.Image = "rbxassetid://" .. tostring(76181608348088)
+discordBtn2.Image = "rbxassetid://" .. tostring(97415811985294)
 discordBtn2.Parent = frame
 discordBtn2.ZIndex = 2
 discordBtn2.MouseButton1Click:Connect(function()
