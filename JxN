@@ -138,11 +138,11 @@ discordBtn.Parent = frame
 discordBtn.ZIndex = 2
 discordBtn.MouseButton1Click:Connect(function()
 	if syn and syn.openurl then
-		syn.openurl("https://discord.gg/jtSvZ3bhHj")
-  syn.openurl("")
+		syn.openurl(https://discord.gg/jtSvZ3bhHj")
+  syn.openurl("https://discord.gg/GNMhczhJ")
 	elseif setclipboard then
-		setclipboard("https://discord.gg/jtSvZ3bhHj")
-  setclipboard("")
+		setclipboard("JMods_Discord: https://discord.gg/jtSvZ3bhHj")
+  setclipboard("NullModz_Discord: https://discord.gg/GNMhczhJ")
 	end
 end)
  
