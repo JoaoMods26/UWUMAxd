@@ -145,8 +145,8 @@ discordBtn.MouseButton1Click:Connect(function()
 end)
 
 local discordBtn2 = Instance.new("ImageButton")
-discordBtn2.Size = UDim2.new(0, 48, 0, 48)
-discordBtn2.Position = UDim2.new(0, 200, 0, -27) 
+discordBtn2.Size = UDim2.new(0, 48, 0, 70)
+discordBtn2.Position = UDim2.new(0, 250, 0, -27) 
 discordBtn2.BackgroundColor3 = Color3.new(1, 1, 1)
 discordBtn2.BackgroundTransparency = 1
 discordBtn2.Image = "rbxassetid://" .. tostring(82574844253944)
