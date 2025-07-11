@@ -139,8 +139,10 @@ discordBtn.ZIndex = 2
 discordBtn.MouseButton1Click:Connect(function()
 	if syn and syn.openurl then
 		syn.openurl("https://discord.gg/jtSvZ3bhHj")
+  syn.openurl("")
 	elseif setclipboard then
 		setclipboard("https://discord.gg/jtSvZ3bhHj")
+  setclipboard("")
 	end
 end)
  
