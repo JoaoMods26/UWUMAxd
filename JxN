@@ -125,6 +125,62 @@ end
 	}
 	UG.Rotation = 90
 
+
+
+ ---DISCORD
+local discordBtn = Instance.new("ImageButton")
+discordBtn.Size = UDim2.new(0, 24, 0, 24)
+discordBtn.Position = UDim2.new(0, 110, 0, -27) 
+discordBtn.BackgroundColor3 = Color3.new(1, 1, 1)
+discordBtn.BackgroundTransparency = 1
+discordBtn.Image = "rbxassetid://" .. tostring(76181608348088)
+discordBtn.Parent = frame
+discordBtn.ZIndex = 2
+discordBtn.MouseButton1Click:Connect(function()
+	if syn and syn.openurl then
+		syn.openurl("https://discord.gg/jtSvZ3bhHj")
+	elseif setclipboard then
+		setclipboard("https://discord.gg/jtSvZ3bhHj")
+	end
+end)
+ 
+local dragging = false
+local dragInput, mousePos, framePos
+ 
+title.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = true
+		mousePos = input.Position
+		framePos = frame.Position
+	end
+end)
+ 
+title.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement then
+		dragInput = input
+	end
+end)
+ 
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+	if input == dragInput and dragging then
+		local delta = input.Position - mousePos
+		frame.Position = UDim2.new(
+			framePos.X.Scale, framePos.X.Offset + delta.X,
+			framePos.Y.Scale, framePos.Y.Offset + delta.Y
+		)
+	end
+end)
+ 
+game:GetService("UserInputService").InputEnded:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = false
+	end
+end)
+
+----Chat
+
+
+
 	chatBox = Instance.new("ScrollingFrame", frame)
 	chatBox.Size = UDim2.new(1, -10, 0.75, -5)
 	chatBox.Position = UDim2.new(0, 5, 0, 5)
