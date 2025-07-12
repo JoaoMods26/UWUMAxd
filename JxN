@@ -145,7 +145,7 @@ discordBtn.MouseButton1Click:Connect(function()
 end)
 
 local discordBtn2 = Instance.new("ImageButton")
-discordBtn2.Size = UDim2.new(0, 20, 0, 70)
+discordBtn2.Size = UDim2.new(0, 58, 0, 70)
 discordBtn2.Position = UDim2.new(0, 250, 0, -54) 
 discordBtn2.BackgroundColor3 = Color3.new(1, 1, 1)
 discordBtn2.BackgroundTransparency = 1
