@@ -140,7 +140,7 @@ discordBtn.MouseButton1Click:Connect(function()
 	if syn and syn.openurl then
 		syn.openurl("https://discord.gg/jtSvZ3bhHj")
 	elseif setclipboard then
-		setclipboard("JMods_Discord: https://discord.gg/jtSvZ3bhHj")
+		setclipboard("https://discord.gg/jtSvZ3bhHj")
 	end
 end)
 
