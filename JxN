@@ -108,6 +108,39 @@ if contenido then
 	end
 end
 
+
+if ChatScripters[player.Name] then
+	local deleteBtn = Instance.new("TextButton")
+	deleteBtn.Size = UDim2.new(0, 24, 0, 24)
+	deleteBtn.Position = UDim2.new(0, 4, 0, -55)
+	deleteBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	deleteBtn.Text = "🗑"
+	deleteBtn.TextColor3 = Color3.new(1, 1, 1)
+	deleteBtn.Font = Enum.Font.SourceSansBold
+	deleteBtn.TextSize = 18
+	deleteBtn.ZIndex = 3
+	deleteBtn.Parent = frame
+ 
+	Instance.new("UICorner", deleteBtn).CornerRadius = UDim.new(0, 4)
+ 
+	deleteBtn.MouseButton1Click:Connect(function()
+		pcall(function()
+			local response = request({
+				Url = firebaseURL,
+				Method = "DELETE"
+			})
+			if response and (response.StatusCode == 200 or response.StatusCode == 204) then
+				print("✅ Base de datos vaciada correctamente.")
+			else
+				warn("Error al vaciar Firebase:", response and response.StatusCode, response and response.Body)
+			end
+		end)
+	end)
+end
+
+
+
+
 	local title = Instance.new("TextLabel", frame)
 	title.Size = UDim2.new(1, 0, 0, 30)
 	title.Position = UDim2.new(0, 0, 0, -30)
