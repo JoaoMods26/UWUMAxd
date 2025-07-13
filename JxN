@@ -5,6 +5,7 @@ end
 
 local ChatScripters = {
   ["joao_modsF"] = true,
+  ["joao_mods26"] = true,
   ["INFINITYH4CK"] = true
 
 }
