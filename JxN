@@ -455,7 +455,12 @@ local function showMessages(data)
 		copyBtn.BorderSizePixel = 0
 		copyBtn.Parent = container
 		copyBtn.MouseButton1Click:Connect(function()
-			if setclipboard then setclipboard(fullText) end
+			if setclipboard then setclipboard(fullText)
+copyBtn.TouchTap:Connect(function()
+	if setclipboard then setclipboard(fullText) 
+end
+end)
+end
 		end)
 		end
 	end
