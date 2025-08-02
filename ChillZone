@@ -1,0 +1,100 @@
+local Players = game.Players
+local Player = Players.LocalPlayer
+local char = Player.Character
+local Hrp = char:FindFirstChild("HumanoidRootPart")
+local Lighting = game:GetService("Lighting")
+
+local Cantidad = 50
+local Radio = 400
+local Speed = 150
+local Centro = CFrame.new(5072.6, 100791.4, 165925.8)
+
+
+local SkyBox = Instance.new("Sky")
+SkyBox.SkyboxUp = "rbxassetid://4389125585"
+SkyBox.SkyboxDn = "rbxassetid://4389125585"
+SkyBox.SkyboxBk = "rbxassetid://4389125585"
+SkyBox.SkyboxFt = "rbxassetid://4389125585"
+SkyBox.SkyboxRt = "rbxassetid://4389125585"
+SkyBox.SkyboxLf = "rbxassetid://4389125585"
+SkyBox.Parent = Lighting
+
+if game.Workspace:FindFirstChild("BlackHole") then
+  game.Workspace.BlackHole:Destroy()
+end
+
+local BlackHole = Instance.new("Part")
+BlackHole.Name = "BlackHole"
+BlackHole.Material = Enum.Material.Neon
+BlackHole.Color = Color3.fromRGB(0,0,0)
+BlackHole.Shape = Enum.PartType.Ball
+BlackHole.Size = Vector3.new(400,400,400)
+BlackHole.Anchored = true
+BlackHole.CanCollide = false
+BlackHole.CFrame = Centro * CFrame.new(600,0,-300)
+BlackHole.Parent = game.Workspace
+
+local resaltadoHole = Instance.new("Highlight")
+resaltadoHole.FillColor = Color3.fromRGB(0,0,0)
+resaltadoHole.OutlineColor = Color3.fromRGB(255,255,255)
+resaltadoHole.Parent = BlackHole
+
+if game.Workspace:FindFirstChild("BlackHoleBase") then
+  game.Workspace.BlackHoleBase:Destroy()
+end
+
+local basePlate = Instance.new("Part")
+basePlate.Name = "BlackHoleBase"
+basePlate.Material = Enum.Material.Neon
+basePlate.Size = Vector3.new(10000000,1,10000000)
+basePlate.Anchored = true
+basePlate.Color = Color3.fromRGB(0,0,0)
+basePlate.CFrame = Centro * CFrame.new(0,-400,0)
+basePlate.Parent = game.Workspace
+
+Hrp.CFrame = CFrame.newL(5072.6, 100395.0, 165925.8)
+
+local Parts = {}
+
+local function MakePart()
+  for i = 1,Cantidad,1 do
+    if game.Workspace:FindFirstChild("Part"..i) then
+      game.Workspace:FindFirstChild("Part"..i):Destroy()
+    end
+  local Part = Instance.new("Part")
+  Part.Name = "Part"..i
+  Part.Material = Enum.Material.Neon
+  Part.Size = Vector3.new(80,80,80)
+  Part.Color = Color3.fromRGB(255,255,0)
+  Part.Parent = game.Workspace
+  
+  local resaltado = Instance.new("Highlight")
+  resaltado.FillColor = Color3.fromRGB(255,255,0)
+  resaltado.OutlineColor = Color3.fromRGB(255,255,255)
+  resaltado.Parent = Part
+  
+  local Angulo = math.rad((360 / Cantidad) * i)
+  table.insert(Parts,{
+    Part = Part,
+    Angulo = Angulo
+    })
+  end
+end
+
+MakePart()
+
+local Run = game:GetService("RunService")
+
+Run.Heartbeat:Connect(function(dt)
+  for _, info in ipairs(Parts) do
+    info.Angulo = info.Angulo + Speed * dt
+    local x = math.cos(info.Angulo) * Radio
+    local z = math.sin(info.Angulo) * Radio
+    local RandomRotation = CFrame.Angles(
+      math.rad(math.random(-360,360)),
+      math.rad(math.random(-360,360)),
+      math.rad(math.random(-360,360)))
+    BlackHole.CFrame = BlackHole.CFrame * CFrame.Angles(math.rad(math.random(-2,2)),0,0)
+    info.Part.CFrame = BlackHole.CFrame * CFrame.new(x,0,z) * RandomRotation
+  end
+end)
