@@ -618,7 +618,7 @@ local data = {
 	jobId = jobId,
 	placeId = placeId,
 	timestamp = os.time(),
-	hora = os.date("%X") -- hora legible (HH:MM:SS)
+	hora = os.date("!%H:%M:%S", os.time()) -- el "!" fuerza UTC -- hora legible (HH:MM:SS)
 }
 
 local jsonData = HttpService:JSONEncode(data)
