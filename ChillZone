@@ -52,7 +52,7 @@ basePlate.Color = Color3.fromRGB(0,0,0)
 basePlate.CFrame = Centro * CFrame.new(0,-400,0)
 basePlate.Parent = game.Workspace
 
-Hrp.CFrame = CFrame.newL(5072.6, 100395.0, 165925.8)
+Hrp.CFrame = CFrame.new(5072.6, 100395.0, 165925.8)
 
 local Parts = {}
 
