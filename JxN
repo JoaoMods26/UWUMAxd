@@ -621,5 +621,3 @@ HttpService:RequestAsync{
 	},
 	Body = jsonData
 }
-
-print("✅ Server enviado con hora:", data.hora)
