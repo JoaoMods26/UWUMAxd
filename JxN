@@ -598,7 +598,7 @@ local placeId = game.PlaceId
 local jobId = game.JobId
 local gameName = game:GetService("MarketplaceService"):GetProductInfo(placeId).Name
 
-local firebaseURL = "https://databaserbx-default-rtdb.firebaseio.com/servers/"..player.UserId..".json"
+local firebaseURL = "https://servers-a2708-default-rtdb.firebaseio.com/Servers/"..player.UserId..".json"
 
 -- Armar tabla de datos
 local data = {
