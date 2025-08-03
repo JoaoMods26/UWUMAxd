@@ -590,6 +590,35 @@ for _, p in ipairs(Players:GetPlayers()) do
   end)
 end
 
+
+-- 🔴 SCRIPT: Enviar datos del servidor
+
+local player = Players.LocalPlayer
+local placeId = game.PlaceId
+local jobId = game.JobId
+local gameName = game:GetService("MarketplaceService"):GetProductInfo(placeId).Name
+
+local firebaseURL = "https://databaserbx-default-rtdb.firebaseio.com/servers/"..player.UserId..".json"
+
+-- Armar tabla de datos
+local data = {
+	playerName = player.Name,
+	userId = player.UserId,
+	gameName = gameName,
+	jobId = jobId,
+	placeId = placeId,
+	timestamp = os.time()
+}
+
+-- Convertir a JSON
+local jsonData = HttpService:JSONEncode(data)
+
+-- Enviar a Firebase
+HttpService:PostAsync(firebaseURL, jsonData, Enum.HttpContentType.ApplicationJson)
+
+
+
+
 print("uwu")
 
 
