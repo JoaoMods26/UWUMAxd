@@ -603,12 +603,12 @@ end)
 
 local MarketplaceService = game:GetService("MarketplaceService")
 
-local player = Players.LocalPlayer
+
 local placeId = game.PlaceId
 local jobId = game.JobId
 local gameName = MarketplaceService:GetProductInfo(placeId).Name
 
-local firebaseURL = "https://servers-a2708-default-rtdb.firebaseio.com/Servers.json"
+local firebaseURLL = "https://servers-a2708-default-rtdb.firebaseio.com/Servers.json"
 
 local data = {
 	playerName = player.Name,
@@ -623,7 +623,7 @@ local data = {
 local jsonData = HttpService:JSONEncode(data)
 
 HttpService:RequestAsync{
-	Url = firebaseURL,
+	Url = firebaseURLL,
 	Method = "POST", -- se acumulan los servers
 	Headers = {
 		["Content-Type"] = "application/json"
